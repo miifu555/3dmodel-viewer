@@ -19,6 +19,26 @@
         <a-sky color="#87CEEB"></a-sky> <a-entity light="type: ambient; intensity: 0.6"></a-entity>
         <a-entity light="type: directional; intensity: 0.8" position="-1 1 1"></a-entity>
     </a-scene>
+    <script>
+      // 1. URLからパラメータを取得する関数
+      const urlParams = new URLSearchParams(window.location.search);
+      const modelName = urlParams.get('model'); // ?model=XXX の部分を取得
+    
+      if (modelName) {
+        // 2. モデルを表示する要素（a-gltf-model）を取得
+        const modelEl = document.querySelector('#viewer');
+        
+        // 3. GitHubのリポジトリ構造に合わせてURLを組み立てる
+        // 例: モデル専用リポジトリのRawパスを指定
+        const baseUrl = "https://raw.githubusercontent.com/ユーザー名/モデルリポジトリ/main/";
+        const fullPath = baseUrl + modelName;
+    
+        // 4. src属性にセットしてモデルを読み込む
+        modelEl.setAttribute('src', fullPath);
+        console.log("Loading model:", fullPath);
+      }
+    </script>
 </body>
 
 </html>
+
