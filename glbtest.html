@@ -7,17 +7,9 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <a-scene>
-        <a-assets>
-            <a-asset-item id="github-model" src="https://raw.githubusercontent.com/miifu555/oc-content-models/main/model_20260203_194940.glb"></a-asset-item>
-        </a-assets>
-        <a-entity 
-            gltf-model="#github-model" 
-            position="0 1.5 -3" 
-            scale="1 1 1"
-            rotation="0 45 0">
-        </a-entity>
-        <a-sky color="#87CEEB"></a-sky> <a-entity light="type: ambient; intensity: 0.6"></a-entity>
-        <a-entity light="type: directional; intensity: 0.8" position="-1 1 1"></a-entity>
+      <a-gltf-model id="viewer" position="0 1.5 -3"></a-gltf-model>
+      
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
     <script>
       // 1. URLからパラメータを取得する関数
@@ -41,4 +33,5 @@
 </body>
 
 </html>
+
 
